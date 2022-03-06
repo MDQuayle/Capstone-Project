@@ -1,9 +1,44 @@
 class PostsController < ApplicationController
-    
-	def nba
-		posts = Post.find_by(sport: "NBA")
-		render json: post
+  def index(sport)  
+    posts = Post.find_by(sport: sport)
+    render json: post
+	
+  def nba
+		index("NBA")
 	end
+
+  def nfl
+		index("NFL")
+	end
+
+  def mlb
+		index("MLB")
+	end
+
+  def wnba
+		index("WNBA")
+	end
+
+  def mls
+		index("MLS")
+	end
+
+  def ncaaf
+		index("NCAAF")
+	end
+
+  def ncaam
+		index("NCAAM")
+	end
+
+  def ncaaw
+		index("NCAAW")
+	end
+
+  def nhl
+		index("NHL")
+	end
+
 	
   def create
     post = Post.create!(post_params)
