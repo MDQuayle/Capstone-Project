@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.string :sport
       t.string :title
       t.string :content
+      t.integer :votes
       t.integer :user_id
 
       t.timestamps
