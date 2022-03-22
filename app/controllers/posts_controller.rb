@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  def index(sport)  
-    posts = Post.find_by(sport: sport)
+  def index()  
+    posts = Post.all
     render json: posts
   end
 	
