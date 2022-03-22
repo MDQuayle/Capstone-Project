@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   def index(sport)  
     posts = Post.find_by(sport: sport)
-    render json: post
+    render json: posts
+  end
 	
   def nba
-		index("NBA")
+		posts = Post.find_by(sport: "NBA")
+    render json: posts
 	end
 
   def nfl

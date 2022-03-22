@@ -1,4 +1,4 @@
 class PostSerializer < ActiveModel::Serializer
     attributes :id, :sport, :title, :content, :votes
-    has_many :relies
+    has_many :replies
   end

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :posts, do
+  resources :posts, only: [:index, :show] do
     resources :replies, only: [:index, :create]
   end
   resources :replies
+  resources :posts
   get "/nba", to: "posts#nba"
   get "/nfl", to: "posts#nfl"
   get "/mlb", to: "posts#mlb"
