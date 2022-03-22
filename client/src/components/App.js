@@ -1,6 +1,7 @@
 import '../App.css';
 import {Route, Routes} from 'react-router-dom';
 import Header from './Header.js';
+import LogIn from './LogIn.js';
 import { useDispatch } from "react-redux";
 import { addPost } from '../PostSlice';
 import NBAPostsList from './NBA/NBAPostsList';
