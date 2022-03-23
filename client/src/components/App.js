@@ -1,5 +1,6 @@
 import '../App.css';
 import {Route, Routes} from 'react-router-dom';
+import {useState, useEffect} from 'react';
 import Header from './Header.js';
 import LogIn from './LogIn.js';
 import { useDispatch } from "react-redux";
@@ -39,7 +40,7 @@ function App() {
       <Header user={user} onLogout={handleLogout}/>
         <Routes>
           <Route path = "/" element={<LogIn handleLogin={handleLogin}/>}/>
-          <Route path="/NBA" element={<NBAPostsList posts={posts} user={user}/>} />
+          <Route path="/NBA" element={<NBAPostsList user={user}/>} />
         </Routes>
       </header>
     </div>
