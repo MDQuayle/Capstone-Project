@@ -1,4 +1,4 @@
-import NBAPostsCard from 'NBAPostsCard'
+import NBAPostsCard from './NBAPostsCard'
 import { useSelector } from "react-redux";
 function NBAPostsList({user}) {
   const posts =  useSelector((state) => state.posts)

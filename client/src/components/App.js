@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import Header from './Header.js';
 import LogIn from './LogIn.js';
 import { useDispatch } from "react-redux";
-import { addPost } from '../PostSlice';
+import { addPost } from './PostSlice';
 import NBAPostsList from './NBA/NBAPostsList';
 
 function App() {

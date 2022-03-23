@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import quotesReducer from "./features/quotes/quotesSlice";
+import postReducer from "./components/PostSlice";
+import replyReducer from "./components/ReplySlice"
 
 export default combineReducers({
-  quotes: quotesReducer,
+  posts: postReducer,
+  replies: replyReducer,
 });
