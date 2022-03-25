@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('/NBA')
+    fetch('http://localhost:3000/nba')
     .then(res=> res.json())
     .then(posts => dispatch(addPost(posts))
   )},[])
