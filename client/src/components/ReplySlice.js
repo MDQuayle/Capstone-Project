@@ -1,22 +1,19 @@
-import { v4 as uuid } from "uuid";
 import { createSlice } from "@reduxjs/toolkit";
 
 const repliesSlice = createSlice({
   name: "replies",
-  initialState: {
-    entities: [],
-  },
+  initialState: [],
   reducers: {
     replyAdded(state, action) {
-      state.entities.push({ id: uuid(), ...action.payload });
+      return [...state, action.payload]
     },
     replyRemoved(state, action) {
-      const index = state.entities.findIndex((r) => r.id === action.payload);
-      state.entities.splice(index, 1);
+      const index = state.findIndex((r) => r.id === action.payload);
+      state.splice(index, 1);
     },
     replyUpvote(state, action){
-      return state.entities.map((reply) => {
-        if (reply.id === action.payload) {
+      return state.map((reply) => {
+        if (reply.id === action.payload.id) {
           return {
             ...reply,
             votes: reply.votes + 1,
@@ -27,8 +24,8 @@ const repliesSlice = createSlice({
       })
     },
     replyDownvote(state, action){
-      return state.entities.map((reply) => {
-        if (reply.id === action.payload && reply.votes > 0) {
+      return state.map((reply) => {
+        if (reply.id === action.payload.id && reply.votes > 0) {
           return {
             ...reply,
             votes: reply.votes - 1,

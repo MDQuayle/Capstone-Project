@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import Header from './Header.js';
 import LogIn from './LogIn.js';
 import { useDispatch } from "react-redux";
-import { addPost } from './PostSlice';
+import { populate } from './PostSlice';
 import NBAPostsList from './NBA/NBAPostsList';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:3000/nba')
     .then(res=> res.json())
-    .then(posts => dispatch(addPost(posts))
+    .then(posts => dispatch(populate(posts))
   )},[])
 
   function handleLogin(user){

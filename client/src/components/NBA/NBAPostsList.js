@@ -1,10 +1,10 @@
 import NBAPostsCard from './NBAPostsCard'
 import { useSelector } from "react-redux";
 function NBAPostsList({user}) {
-  const posts =  useSelector((state) => state.post)
+  const posts =  useSelector((state) => state.posts)
   console.log(posts)
-  const allPosts = posts.map((post) => (
-    <NBAPostsCard key={post.id} id={post.id} post={post} user={user} />
+  const allPosts = posts.map((post,index) => (
+    <NBAPostsCard key={index} post={post} user={user} />
   ))
   return(
   <div>
