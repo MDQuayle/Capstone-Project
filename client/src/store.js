@@ -1,9 +1,13 @@
-import { createStore } from "redux";
-import rootReducer from "./reducer";
+import { configureStore } from "@reduxjs/toolkit";
 
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import postReducer from "./components/PostSlice";
+import repliesReducer from "./components/ReplySlice";
+
+const store = configureStore({
+  reducer: {
+    posts: postReducer,
+    replies: repliesReducer,
+  },
+});
 
 export default store;
