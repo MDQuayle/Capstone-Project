@@ -4,6 +4,9 @@ const repliesSlice = createSlice({
   name: "replies",
   initialState: [],
   reducers: {
+    populate( state, action ) {
+      return action.payload
+    },
     replyAdded(state, action) {
       return [...state, action.payload]
     },
