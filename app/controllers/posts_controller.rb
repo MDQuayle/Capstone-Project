@@ -45,6 +45,11 @@ class PostsController < ApplicationController
     post = Post.create!(post_params)
     render json: post , status: :created
   end
+
+  def show
+    post = Post.find_by(id: params[:id])
+    render json: post
+end
     
   def update
   	post = Post.find_by(id: params[:id])

@@ -8,17 +8,10 @@ function NBAPostsForm({user_id, user}) {
     content: "",
     sport: "NBA",
     user_id: user_id,
-    username: user.username
+    // username: user.username
   });
     const[errors, setErrors] = useState("")
     const dispatch = useDispatch();
-
-    function handleChange(event) {
-      setFormData({
-        ...formData,
-        [event.target.name]: event.target.value,
-      });
-    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -52,7 +45,10 @@ function NBAPostsForm({user_id, user}) {
               id="title"
               autoComplete="off"
               value={formData.title}
-              onChange={handleChange}
+              // onChange={handleChange}
+              onChange={(e) => setFormData({
+                [formData.title]: e.target.value,
+              })}
             />
 
             <p>
@@ -61,7 +57,10 @@ function NBAPostsForm({user_id, user}) {
               type="text"
               id="content"
               value={formData.content}
-              onChange={handleChange}
+              // onChange={handleChange}
+              onChange={(e) => setFormData({
+                [formData.content]: e.target.value,
+              })}
               autoComplete="off"
             />
             </p>

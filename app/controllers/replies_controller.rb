@@ -1,7 +1,7 @@
-class PostsController < ApplicationController
+class RepliesController < ApplicationController
   def index
     if params[:post_id]
-      movie = Post.find(params[:post_id])
+      post = Post.find(params[:post_id])
       replies = post.replies
     else
       replies = Reply.all

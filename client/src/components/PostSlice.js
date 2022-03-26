@@ -8,7 +8,7 @@ const postSlice = createSlice({
       return action.payload
     },
     postAdded(state, action) {
-      state.push({...action.payload });
+      return [...state, action.payload]
     },
     postRemoved(state, action) {
       const index = state.findIndex((r) => r.id === action.payload);
