@@ -1,7 +1,7 @@
-import NBARepliesCard from 'NBARepliesCard'
+import NBARepliesCard from './NBARepliesCard'
 import {useEffect} from 'react';
 import { useDispatch } from "react-redux";
-import { populate } from './ReplySlice';
+import { populate } from '../ReplySlice';
 function NBARepliesList({id, user}) {
   const dispatch = useDispatch()
   useEffect(() => {

@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_05_135123) do
     t.string "sport"
     t.string "title"
     t.string "content"
+    t.string "username"
     t.integer "votes"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -24,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_05_135123) do
   create_table "replies", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.string "username"
     t.integer "votes"
     t.integer "post_id"
     t.integer "user_id"
