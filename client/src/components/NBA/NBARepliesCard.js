@@ -1,3 +1,4 @@
+import NBARepliesForm from "./NBARepliesForm";
 function NBARepliesCard({user, reply, id}) {
   return(
     <div>

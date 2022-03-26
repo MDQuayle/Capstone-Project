@@ -1,6 +1,6 @@
 import NBARepliesCard from './NBARepliesCard'
 import {useEffect} from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { populate } from '../ReplySlice';
 function NBARepliesList({id, user}) {
   const dispatch = useDispatch()
@@ -11,7 +11,7 @@ function NBARepliesList({id, user}) {
   },[])
 
   const replies =  useSelector((state) => state.replies)
-  const allReplies = replies.map((reply) => <NBARepliesCard key = {index} id={reply.id} reply={reply} user={user}/> )
+  const allReplies = replies.map((reply) => <NBARepliesCard key = {reply.id} id={reply.id} reply={reply} user={user}/> )
   
   return(
   <div>
