@@ -1,13 +1,14 @@
 import {useState} from 'react'
 import { useDispatch } from "react-redux";
-import { addReply } from '../ReplySlice';
+import { replyAdded } from '../ReplySlice';
 
-function NBARepliesForm({user_id,id}) {
+function NBARepliesForm({user_id,id,user}) {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
     sport: "NBA",
     user_id: user_id,
+    username: user.username,
     post_id: id
   });
     const[errors, setErrors] = useState("")
@@ -22,7 +23,7 @@ function NBARepliesForm({user_id,id}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`/replies`, {
+        fetch(`http://localhost:3000/replies`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -33,7 +34,7 @@ function NBARepliesForm({user_id,id}) {
           if (response.ok) {
             response.json().then((reply) => {
               setErrors([]);
-              dispatch(addReply(reply));
+              dispatch(replyAdded(reply));
             });
           } else {
           setErrors("Invalid Entry. Please include a title and at least 10 characters for your reply");

@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { useDispatch } from "react-redux";
-import { addedPost } from '../PostSlice';
+import { postAdded } from '../PostSlice';
 
 function NBAPostsForm({user_id, user}) {
   const [formData, setFormData] = useState({
@@ -33,7 +33,7 @@ function NBAPostsForm({user_id, user}) {
           if (response.ok) {
             response.json().then((post) => {
               setErrors([]);
-              dispatch(addedPost(post));
+              dispatch(postAdded(post));
             });
           } else {
           setErrors("Invalid Entry. Please include a title and at least 10 characters for your post");
