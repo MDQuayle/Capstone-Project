@@ -15,7 +15,7 @@ function NBAPostsForm({user_id, user}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`http://localhost:3000/posts`, {
+        fetch('http://localhost:3000/posts', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -27,6 +27,10 @@ function NBAPostsForm({user_id, user}) {
             response.json().then((post) => {
               setErrors([]);
               dispatch(postAdded(post));
+              setFormData({title: "",
+              content: "",
+              sport: "NBA",
+              user_id: user_id,})
             });
           } else {
           setErrors("Invalid Entry. Please include a title and at least 10 characters for your post");
@@ -46,9 +50,7 @@ function NBAPostsForm({user_id, user}) {
               autoComplete="off"
               value={formData.title}
               // onChange={handleChange}
-              onChange={(e) => setFormData({
-                [formData.title]: e.target.value,
-              })}
+              onChange={(e) => setFormData('title', e.target.value)}
             />
 
             <p>
@@ -58,9 +60,7 @@ function NBAPostsForm({user_id, user}) {
               id="content"
               value={formData.content}
               // onChange={handleChange}
-              onChange={(e) => setFormData({
-                [formData.content]: e.target.value,
-              })}
+              onChange={(e) => setFormData('content', e.target.value)}
               autoComplete="off"
             />
             </p>

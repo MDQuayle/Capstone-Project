@@ -1,43 +1,47 @@
 class PostsController < ApplicationController
-  def index(sport)  
+  def index  
+    posts = Post.all
+    render json: posts
+  end
+  def sport(sport)  
     posts = Post.where(sport: sport)
     render json: posts
   end
 	
   def nba
-		index("NBA")
+		sport("NBA")
 	end
 
   def nfl
-		index("NFL")
+		sport("NFL")
 	end
 
   def mlb
-		index("MLB")
+		sport("MLB")
 	end
 
   def wnba
-		index("WNBA")
+		sport("WNBA")
 	end
 
   def mls
-		index("MLS")
+		sport("MLS")
 	end
 
   def ncaaf
-		index("NCAAF")
+		sport("NCAAF")
 	end
 
   def ncaam
-		index("NCAAM")
+		sport("NCAAM")
 	end
 
   def ncaaw
-		index("NCAAW")
+		sport("NCAAW")
 	end
 
   def nhl
-		index("NHL")
+		sport("NHL")
 	end
 
 	
