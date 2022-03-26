@@ -1,13 +1,14 @@
 import {useState} from 'react'
 import { useDispatch } from "react-redux";
-import { addPost } from '../PostSlice';
+import { addedPost } from '../PostSlice';
 
-function NBAPostsForm({user_id}) {
+function NBAPostsForm({user_id, user}) {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
     sport: "NBA",
-    user_id: user_id
+    user_id: user_id,
+    username: user.username
   });
     const[errors, setErrors] = useState("")
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ function NBAPostsForm({user_id}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`/posts`, {
+        fetch(`http://localhost:3000/posts`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -32,7 +33,7 @@ function NBAPostsForm({user_id}) {
           if (response.ok) {
             response.json().then((post) => {
               setErrors([]);
-              dispatch(addPost(post));
+              dispatch(addedPost(post));
             });
           } else {
           setErrors("Invalid Entry. Please include a title and at least 10 characters for your post");
