@@ -1,5 +1,5 @@
 import NBARepliesList from './NBARepliesList'
-function NBAPostsCard({post, id}) {
+function NBAPostsCard({post, id, user}) {
   return(
     <div>
       <ul>
@@ -7,7 +7,7 @@ function NBAPostsCard({post, id}) {
         <p>{post.content}</p>
         <p>{post.user}</p>
         <p>{post.votes}</p>
-        <NBARepliesList id={id}/>
+        <NBARepliesList id={id} user={user}/>
       </ul>
     </div>
     )
