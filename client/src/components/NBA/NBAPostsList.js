@@ -5,7 +5,7 @@ function NBAPostsList({user}) {
   const posts =  useSelector((state) => state.posts)
   console.log(posts)
   const allPosts = posts.map((post,index) => (
-    <NBAPostsCard key={index} id={id} post={post} user={user} />
+    <NBAPostsCard key={index} id={post.id} post={post} user={user} />
   ))
   return(
   <div>
