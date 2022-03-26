@@ -40,6 +40,6 @@ const repliesSlice = createSlice({
   },
 }});
 
-export const { populate, reviewAdded, reviewRemoved, replyUpvote, replyDownvote } = repliesSlice.actions;
+export const { populate, replyAdded, replyRemoved, replyUpvote, replyDownvote } = repliesSlice.actions;
 
 export default repliesSlice.reducer;
