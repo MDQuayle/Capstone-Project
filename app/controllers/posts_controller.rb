@@ -68,6 +68,6 @@ class PostsController < ApplicationController
     
   private
   def post_params
-    params.permit(:sport, :title, :content,:user_id)
+    params.permit(:sport, :title, :content,:user_id, :username)
   end
 end
