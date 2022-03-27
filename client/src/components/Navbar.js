@@ -18,7 +18,7 @@ function Navbar() {
         to="/NBA"
         exact
         style={linkStyles}
-        activeStyle={{
+        activestyle={{
             background: "white",
             color: "black",
         }}
@@ -29,7 +29,7 @@ function Navbar() {
         to="/"
         exact
         style={linkStyles}
-        activeStyle={{
+        activestyle={{
           background: "white",
           color: "black",
         }}

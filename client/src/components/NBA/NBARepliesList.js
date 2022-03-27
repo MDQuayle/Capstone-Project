@@ -1,4 +1,5 @@
 import NBARepliesCard from './NBARepliesCard'
+import NBARepliesForm from './NBARepliesForm'
 import {useEffect} from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import { populate } from '../ReplySlice';
@@ -12,10 +13,11 @@ function NBARepliesList({id, user}) {
 
   const replies =  useSelector((state) => state.replies)
   const allReplies = replies.map((reply) => <NBARepliesCard key = {reply.id} id={reply.id} reply={reply} user={user}/> )
-  
+  console.log(id)
   return(
   <div>
       {allReplies}
+      <NBARepliesForm id={id} user={user}/>
   </div>
   )
 }

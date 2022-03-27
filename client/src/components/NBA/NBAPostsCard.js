@@ -63,7 +63,7 @@ function NBAPostsCard({post, id, user}) {
           Delete Post
         </Button>
       </Card>
-        <NBARepliesList id={id} user={user}/>
+        <NBARepliesList id={post.id} user={user}/>
       </ul>
     </div>
     )

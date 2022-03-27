@@ -1,4 +1,3 @@
-import NBARepliesForm from "./NBARepliesForm";
 import { Card, CardTitle, CardText, Button} from 'reactstrap'
 import { useDispatch } from "react-redux";
 import {replyRemoved, replyUpvote, replyDownvote } from '../ReplySlice'
@@ -62,7 +61,6 @@ function NBARepliesCard({user, reply, id}) {
           Delete Reply
         </Button>
       </Card>
-        <NBARepliesForm id={id} user={user} />
       </ul>
     </div>
     )
