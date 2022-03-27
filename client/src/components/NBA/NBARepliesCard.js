@@ -6,8 +6,11 @@ function NBARepliesCard({user, reply, id}) {
       <ul>
       <Card
         body
-        color="dark"
         outline
+        style={{
+          backgroundColor: '#222',
+          borderColor: '#000'
+        }}
       >
         <CardTitle tag="h5">
           {reply.title}
