@@ -27,10 +27,6 @@ function NBARepliesCard({user, reply, id}) {
           DownVote
         </Button>
       </Card>
-        {/* <h4>{reply.title}</h4>
-        <p>{reply.content}</p>
-        <p>{reply.user}</p>
-        <p>{reply.votes}</p> */}
         <NBARepliesForm id={id} user={user} />
       </ul>
     </div>
