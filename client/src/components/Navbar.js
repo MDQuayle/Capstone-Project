@@ -14,6 +14,17 @@ const linkStyles = {
 function Navbar() {
   return (
     <div>
+     <NavLink
+        to="/NBA"
+        exact
+        style={linkStyles}
+        activeStyle={{
+            background: "white",
+            color: "black",
+        }}
+      >
+        NBA
+      </NavLink>
       <NavLink
         to="/"
         exact
@@ -24,17 +35,6 @@ function Navbar() {
         }}
       >
         LogIn
-      </NavLink>
-      <NavLink
-        to="/NBA"
-        exact
-        style={linkStyles}
-        activeStyle={{
-            background: "white",
-            color: "black",
-        }}
-      >
-        NBA
       </NavLink>
       {/* <NavLink
         to="/newFact"
