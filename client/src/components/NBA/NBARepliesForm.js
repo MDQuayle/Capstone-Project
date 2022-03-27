@@ -42,10 +42,10 @@ function NBARepliesForm({id,user}) {
     
       return (
         <>
-        <h4>What do you have to say?</h4>
+        <h6>Reply!</h6>
         <form onSubmit={handleSubmit}>
           
-            <label>Title:</label>
+            <label>Reply Title:</label>
             <input
               type="text"
               id="title"

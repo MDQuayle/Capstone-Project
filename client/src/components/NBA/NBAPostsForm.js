@@ -41,10 +41,10 @@ function NBAPostsForm({user_id, user}) {
     
       return (
         <>
-        <h4>What do you have to say?</h4>
+        <h5>Create a New Post! What do you have to say?</h5>
         <form onSubmit={handleSubmit}>
           
-            <label>Title:</label>
+            <label>Post Title:</label>
             <input
               type="text"
               id="title"
