@@ -3,11 +3,9 @@ import { useDispatch } from "react-redux";
 import { replyAdded } from '../ReplySlice';
 
 function NBARepliesForm({id,user}) {
-  console.log(user)
   const [formData, setFormData] = useState({
     title: "",
     content: "",
-    sport: "NBA",
     // username: user.username,
     post_id: id
   });

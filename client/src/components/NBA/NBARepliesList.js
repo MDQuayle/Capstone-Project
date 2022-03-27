@@ -13,7 +13,6 @@ function NBARepliesList({id, user}) {
 
   const replies =  useSelector((state) => state.replies)
   const allReplies = replies.map((reply) => <NBARepliesCard key = {reply.id} id={reply.id} reply={reply} user={user}/> )
-  console.log(id)
   return(
   <div>
       {allReplies}
