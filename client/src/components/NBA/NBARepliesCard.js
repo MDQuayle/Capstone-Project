@@ -1,6 +1,14 @@
 import NBARepliesForm from "./NBARepliesForm";
 import { Card, CardTitle, CardText, Button} from 'reactstrap'
+import {replyRemoved, replyUpvote, replyDownvote } from '../ReplySlice'
 function NBARepliesCard({user, reply, id}) {
+  function handleDeleteClick(){
+    fetch(`/replies/${id}`, {
+      method: "DELETE",
+    });
+
+    replyRemoved(id);
+  }
   return(
     <div>
       <ul>
@@ -16,9 +24,9 @@ function NBARepliesCard({user, reply, id}) {
           {reply.title}
         </CardTitle>
         <CardText>
-          {reply.content}
-          {reply.username}
-          {reply.votes}
+          <p>{reply.content}</p>
+          <p>{reply.username}</p>
+          <p>Score: {reply.votes}</p>
         </CardText>
         <Button>
           UpVote
@@ -26,7 +34,7 @@ function NBARepliesCard({user, reply, id}) {
         <Button>
           DownVote
         </Button>
-        <Button>
+        <Button onClick={handleDeleteClick}>
           Delete Reply
         </Button>
       </Card>
