@@ -1,13 +1,37 @@
 import NBARepliesForm from "./NBARepliesForm";
 import { Card, CardTitle, CardText, Button} from 'reactstrap'
+import { useDispatch } from "react-redux";
 import {replyRemoved, replyUpvote, replyDownvote } from '../ReplySlice'
 function NBARepliesCard({user, reply, id}) {
+  const dispatch = useDispatch();
   function handleDeleteClick(){
-    fetch(`/replies/${id}`, {
+    fetch(`/replies/${reply.id}`, {
       method: "DELETE",
     });
 
-    replyRemoved(id);
+    dispatch(replyRemoved(reply.id));
+  }
+
+  function handleUpvoteClick(){
+    fetch(`replies/${reply.id}`, {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "application/json",
+      },
+       body: JSON.stringify({votes: reply.votes +1 }),
+      })
+    dispatch(replyUpvote(reply.id))
+  }
+
+  function handleDownvoteClick(){
+    fetch(`replies/${reply.id}`, {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "application/json",
+      },
+       body: JSON.stringify({votes: reply.votes -1 }),
+      })
+    dispatch(replyDownvote(reply.id))
   }
   return(
     <div>
@@ -28,10 +52,10 @@ function NBARepliesCard({user, reply, id}) {
           <p>{reply.username}</p>
           <p>Score: {reply.votes}</p>
         </CardText>
-        <Button>
+        <Button onClick={handleUpvoteClick}>
           UpVote
         </Button>
-        <Button>
+        <Button onClick={handleDownvoteClick}>
           DownVote
         </Button>
         <Button onClick={handleDeleteClick}>
