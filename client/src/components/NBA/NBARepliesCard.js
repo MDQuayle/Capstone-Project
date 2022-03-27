@@ -26,6 +26,9 @@ function NBARepliesCard({user, reply, id}) {
         <Button>
           DownVote
         </Button>
+        <Button>
+          Delete Reply
+        </Button>
       </Card>
         <NBARepliesForm id={id} user={user} />
       </ul>

@@ -26,6 +26,9 @@ function NBAPostsCard({post, id, user}) {
         <Button>
           DownVote
         </Button>
+        <Button>
+          Delete Post
+        </Button>
       </Card>
         <NBARepliesList id={id} user={user}/>
       </ul>
