@@ -6,7 +6,7 @@ class RepliesController < ApplicationController
     else
       replies = Reply.all
     end
-    render json: replies, include: :posts
+    render json: replies, include: :post
   end 
 
   def create
