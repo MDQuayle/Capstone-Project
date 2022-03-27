@@ -2,6 +2,7 @@ import {useState} from 'react'
 import { useDispatch } from "react-redux";
 import { postAdded } from '../PostSlice';
 
+
 function NBAPostsForm({user_id, user}) {
   const [formData, setFormData] = useState({
     title: "",
