@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/nba')
+    fetch('/nba')
     .then(res=> res.json())
     .then(posts => dispatch(populate(posts))
   )},[])

@@ -16,7 +16,7 @@ function NBAPostsForm({user_id, user}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:3000/posts', {
+        fetch('/posts', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
