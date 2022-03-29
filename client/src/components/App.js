@@ -1,6 +1,6 @@
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useNavigate} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import Header from './Header.js';
 import LogIn from './LogIn.js';
@@ -11,7 +11,8 @@ import NBAPostsList from './NBA/NBAPostsList';
 
 function App() {
   const [user, setUser] = useState(null);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/me").then((response) => {
