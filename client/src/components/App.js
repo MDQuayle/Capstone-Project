@@ -4,6 +4,7 @@ import {Route, Routes} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import Header from './Header.js';
 import LogIn from './LogIn.js';
+import Home from './Home';
 import { useDispatch } from "react-redux";
 import { populate } from './PostSlice';
 import NBAPostsList from './NBA/NBAPostsList';
@@ -20,11 +21,12 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
+  function fetchPosts(){
     fetch('/posts')
     .then(res=> res.json())
     .then(posts => dispatch(populate(posts))
-  )},[])
+  )}
+  fetchPosts()
 
   function handleLogin(user){
     setUser(user)
@@ -32,6 +34,7 @@ function App() {
 
   function handleLogout() {
     setUser(null)
+    navigate('/home')
   }
 
 
@@ -41,6 +44,7 @@ function App() {
       <Header user={user} onLogout={handleLogout}/>
         <Routes>
           <Route path = "/" element={<LogIn handleLogin={handleLogin}/>}/>
+          <Route path="/home" element={<Home/>}/>
           <Route path="/NBA" element={<NBAPostsList user={user}/>} />
         </Routes>
       </header>
