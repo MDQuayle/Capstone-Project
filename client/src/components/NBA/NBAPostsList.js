@@ -4,12 +4,12 @@ import NBAPostsForm from './NBAPostsForm';
 function NBAPostsList({user}) {
   const posts =  useSelector((state) => state.posts)
   console.log(posts)
-  const NBA = posts.find(function(post) {
+  const NBA = posts.filter(function(post) {
     if(post.sport === 'NBA')
       return post;
   });
   console.log(NBA)
-  const allPosts = posts.map((post,index) => (
+  const allPosts = NBA.map((post,index) => (
     <NBAPostsCard key={index} id={post.id} post={post} user={user} />
   ))
   return(
