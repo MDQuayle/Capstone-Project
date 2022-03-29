@@ -21,7 +21,7 @@ function NBARepliesForm({id,user}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`http://localhost:3000/replies`, {
+        fetch(`/replies`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

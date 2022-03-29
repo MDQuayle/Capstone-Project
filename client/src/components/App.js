@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('/nba')
+    fetch('/posts')
     .then(res=> res.json())
     .then(posts => dispatch(populate(posts))
   )},[])

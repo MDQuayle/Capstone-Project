@@ -50,7 +50,7 @@ function NBAPostsCard({post, id, user}) {
         </CardTitle>
         <CardText>
           <p>{post.content}</p>
-          <p>{post.username}</p>
+          <p> - {post.username}</p>
           <p>Score: {post.votes}</p>
         </CardText>
         <Button onClick={handleUpvoteClick}>
