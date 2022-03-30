@@ -3,12 +3,12 @@ import { useDispatch } from "react-redux";
 import { postAdded } from './PostSlice';
 
 
-function PostsForm({user_id, user, sport}) {
+function PostsForm({user, sport}) {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
     sport: {sport},
-    user_id: user_id,
+    user_id: user.id,
     username: user.username,
     votes: 0,
   });
@@ -30,9 +30,7 @@ function PostsForm({user_id, user, sport}) {
               setErrors([]);
               dispatch(postAdded(post));
               setFormData({title: "",
-              content: "",
-              sport: {sport},
-              user_id: user_id,})
+              content: ""})
             });
           } else {
           setErrors("Invalid Entry. Please include a title and at least 10 characters for your post");
