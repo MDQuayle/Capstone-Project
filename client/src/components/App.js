@@ -8,6 +8,9 @@ import Home from './Home';
 import { useDispatch } from "react-redux";
 import { populate } from './PostSlice';
 import NBAPostsList from './NBA/NBAPostsList';
+import WNBAPostsList from './WNBA/WNBAPostsList';
+import NFLPostsList from './NFL/NFLPostsList';
+import MLBPostsList from './MLB/MLBPostsList';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,6 +50,9 @@ function App() {
           <Route path = "/" element={<LogIn handleLogin={handleLogin}/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/NBA" element={<NBAPostsList user={user}/>} />
+          <Route path="/WNBA" element={<WNBAPostsList user={user}/>} />
+          <Route path="/NFL" element={<NFLPostsList user={user}/>} />
+          <Route path="/MLB" element={<MLBPostsList user={user}/>} />
         </Routes>
       </header>
     </div>
