@@ -9,7 +9,8 @@ function PostsForm({user_id, user, sport}) {
     content: "",
     sport: {sport},
     user_id: user_id,
-    username: user.username
+    username: user.username,
+    votes: 0,
   });
     const[errors, setErrors] = useState("")
     const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function PostsForm({user_id, user, sport}) {
               dispatch(postAdded(post));
               setFormData({title: "",
               content: "",
-              sport: "NBA",
+              sport: {sport},
               user_id: user_id,})
             });
           } else {

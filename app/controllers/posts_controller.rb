@@ -78,6 +78,6 @@ end
     
   private
   def post_params
-    params.permit(:sport, :title, :content,:user_id, :username)
+    params.permit(:sport, :title, :votes, :content,:user_id, :username)
   end
 end
