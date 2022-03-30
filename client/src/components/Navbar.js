@@ -10,6 +10,15 @@ const linkStyles = {
   textDecoration: "none",
   color: "white",
 };
+const activeLinkStyles = {
+  display: "inline-block",
+  width: "100px",
+  padding: "12px",
+  margin: "0 6px 6px",
+  background: "white",
+  textDecoration: "none",
+  color: "black",
+};
 
 function Navbar() {
   return (
@@ -17,55 +26,40 @@ function Navbar() {
      <NavLink
         to="/NBA"
         exact
-        style={linkStyles}
-        activestyle={{
-            background: "white",
-            color: "black",
-        }}
+        style={({ isActive }) => 
+                      (isActive ? activeLinkStyles : linkStyles)}
       >
         NBA
       </NavLink>
       <NavLink
         to="/WNBA"
         exact
-        style={linkStyles}
-        activeStyle={{
-            background: "white",
-            color: "black",
-        }}
+        style={({ isActive }) => 
+        (isActive ? activeLinkStyles : linkStyles)}
       >
         WNBA
       </NavLink>
       <NavLink
         to="/NFL"
         exact
-        style={linkStyles}
-        activeStyle={{
-            background: "white",
-            color: "black",
-        }}
+        style={({ isActive }) => 
+        (isActive ? activeLinkStyles : linkStyles)}
       >
         NFL
       </NavLink>
       <NavLink
         to="/MLB"
         exact
-        style={linkStyles}
-        activeStyle={{
-            background: "white",
-            color: "black",
-        }}
+        style={({ isActive }) => 
+        (isActive ? activeLinkStyles : linkStyles)}
       >
         MLB
       </NavLink>
       <NavLink
         to="/login"
         exact
-        style={linkStyles}
-        activestyle={{
-          background: "white",
-          color: "black",
-        }}
+        style={({ isActive }) => 
+        (isActive ? activeLinkStyles : linkStyles)}
       >
         LogIn
       </NavLink>
