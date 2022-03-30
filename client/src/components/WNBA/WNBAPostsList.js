@@ -1,6 +1,6 @@
 import WNBAPostsCard from './WNBAPostsCard'
 import { useSelector } from "react-redux";
-import PostsForm from '..PostsForm/';
+import PostsForm from '../PostsForm';
 function WNBAPostsList({user}) {
   const sport = "WNBA"
   const posts =  useSelector((state) => state.posts)
@@ -9,7 +9,6 @@ function WNBAPostsList({user}) {
     if(post.sport === 'WNBA')
       return post;
   });
-  console.log(NBA)
   const allPosts = WNBA.map((post,index) => (
     <WNBAPostsCard key={index} id={post.id} post={post} user={user} />
   ))

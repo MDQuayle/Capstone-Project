@@ -47,8 +47,8 @@ function App() {
       <header className="App-header">
       <Header user={user} onLogout={handleLogout}/>
         <Routes>
-          <Route path = "/" element={<LogIn handleLogin={handleLogin}/>}/>
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path = "/login" element={<LogIn handleLogin={handleLogin}/>}/>
           <Route path="/NBA" element={<NBAPostsList user={user}/>} />
           <Route path="/WNBA" element={<WNBAPostsList user={user}/>} />
           <Route path="/NFL" element={<NFLPostsList user={user}/>} />

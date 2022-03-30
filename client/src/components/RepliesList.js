@@ -3,7 +3,7 @@ import RepliesForm from './RepliesForm'
 import {useEffect} from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import { populate } from './ReplySlice';
-function NBARepliesList({id, user}) {
+function RepliesList({id, user}) {
   const dispatch = useDispatch()
   useEffect(() => {
     fetch(`http://localhost:3000/posts/${id}/replies`)

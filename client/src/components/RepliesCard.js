@@ -1,6 +1,6 @@
 import { Card, CardTitle, CardText, Button} from 'reactstrap'
 import { useDispatch } from "react-redux";
-import {replyRemoved, replyUpvote, replyDownvote } from '../ReplySlice'
+import {replyRemoved, replyUpvote, replyDownvote } from './ReplySlice'
 function NBARepliesCard({user, reply, id}) {
   const dispatch = useDispatch();
   function handleDeleteClick(){

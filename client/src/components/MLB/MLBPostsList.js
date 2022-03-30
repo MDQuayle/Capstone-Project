@@ -1,6 +1,6 @@
 import MLBPostsCard from './MLBPostsCard'
 import { useSelector } from "react-redux";
-import PostsForm from '..PostsForm/';
+import PostsForm from '../PostsForm';
 function MLBPostsList({user}) {
   const sport = "MLB"
   const posts =  useSelector((state) => state.posts)

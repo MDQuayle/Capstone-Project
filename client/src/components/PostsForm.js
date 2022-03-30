@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { postAdded } from './PostSlice';
 
 
-function NBAPostsForm({user_id, user, sport}) {
+function PostsForm({user_id, user, sport}) {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
@@ -72,4 +72,4 @@ function NBAPostsForm({user_id, user, sport}) {
       )
 }
 
-export default NBAPostsForm;
+export default PostsForm;

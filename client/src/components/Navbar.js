@@ -26,7 +26,40 @@ function Navbar() {
         NBA
       </NavLink>
       <NavLink
-        to="/"
+        to="/WNBA"
+        exact
+        style={linkStyles}
+        activeStyle={{
+            background: "white",
+            color: "black",
+        }}
+      >
+        WNBA
+      </NavLink>
+      <NavLink
+        to="/NFL"
+        exact
+        style={linkStyles}
+        activeStyle={{
+            background: "white",
+            color: "black",
+        }}
+      >
+        NFL
+      </NavLink>
+      <NavLink
+        to="/MLB"
+        exact
+        style={linkStyles}
+        activeStyle={{
+            background: "white",
+            color: "black",
+        }}
+      >
+        MLB
+      </NavLink>
+      <NavLink
+        to="/login"
         exact
         style={linkStyles}
         activestyle={{
@@ -36,17 +69,6 @@ function Navbar() {
       >
         LogIn
       </NavLink>
-      {/* <NavLink
-        to="/newFact"
-        exact
-        style={linkStyles}
-        activeStyle={{
-            background: "white",
-            color: "black",
-        }}
-      >
-        New Fact
-      </NavLink> */}
     </div>
   );
 }
