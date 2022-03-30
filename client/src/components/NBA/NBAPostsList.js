@@ -1,7 +1,8 @@
 import NBAPostsCard from './NBAPostsCard'
 import { useSelector } from "react-redux";
-import NBAPostsForm from './NBAPostsForm';
+import PostsForm from '..PostsForm/';
 function NBAPostsList({user}) {
+  const sport = "NBA"
   const posts =  useSelector((state) => state.posts)
   console.log(posts)
   const NBA = posts.filter(function(post) {
@@ -15,7 +16,7 @@ function NBAPostsList({user}) {
   return(
   <div>
       {allPosts}
-      <NBAPostsForm user={user}/>
+      <PostsForm user={user} sport={sport}/>
   </div>
   )
 }

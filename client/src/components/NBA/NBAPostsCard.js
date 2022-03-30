@@ -1,4 +1,4 @@
-import NBARepliesList from './NBARepliesList'
+import RepliesList from '../RepliesList'
 import { Card, CardTitle, CardText, Button} from 'reactstrap'
 import { useDispatch } from "react-redux";
 import {postRemoved, postUpvote, postDownvote } from '../PostSlice'
@@ -63,7 +63,7 @@ function NBAPostsCard({post, id, user}) {
           Delete Post
         </Button>
       </Card>
-        <NBARepliesList id={post.id} user={user}/>
+        <RepliesList id={post.id} user={user}/>
       </ul>
     </div>
     )

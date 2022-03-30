@@ -1,15 +1,15 @@
 import {useState} from 'react'
 import { useDispatch } from "react-redux";
-import { postAdded } from '../PostSlice';
+import { postAdded } from './PostSlice';
 
 
-function NBAPostsForm({user_id, user}) {
+function NBAPostsForm({user_id, user, sport}) {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
-    sport: "NBA",
+    sport: {sport},
     user_id: user_id,
-    // username: user.username
+    username: user.username
   });
     const[errors, setErrors] = useState("")
     const dispatch = useDispatch();
@@ -50,7 +50,6 @@ function NBAPostsForm({user_id, user}) {
               id="title"
               autoComplete="off"
               value={formData.title}
-              // onChange={handleChange}
               onChange={(e) => setFormData('title', e.target.value)}
             />
 
@@ -60,7 +59,6 @@ function NBAPostsForm({user_id, user}) {
               type="text"
               id="content"
               value={formData.content}
-              // onChange={handleChange}
               onChange={(e) => setFormData('content', e.target.value)}
               autoComplete="off"
             />

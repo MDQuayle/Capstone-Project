@@ -1,8 +1,8 @@
 import {useState} from 'react'
 import { useDispatch } from "react-redux";
-import { replyAdded } from '../ReplySlice';
+import { replyAdded } from './ReplySlice';
 
-function NBARepliesForm({id,user}) {
+function RepliesForm({id,user}) {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
@@ -73,4 +73,4 @@ function NBARepliesForm({id,user}) {
       )
 }
 
-export default NBARepliesForm;
+export default RepliesForm;
