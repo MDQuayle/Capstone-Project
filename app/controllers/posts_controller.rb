@@ -26,7 +26,7 @@ end
   end
     
   def destroy
-  	review = Post.find_by(id: params[:id])
+  	post = Post.find_by(id: params[:id])
     if post
       post.destroy
       head :no_content
