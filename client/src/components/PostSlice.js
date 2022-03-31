@@ -11,9 +11,8 @@ const postSlice = createSlice({
       return [...state, action.payload]
     },
     postRemoved(state, action) {
-        return state.filter((reply) => {
-          return reply.id !== action.payload.id
-    })
+      const index = state.findIndex((r) => r.id === action.payload);
+      state.splice(index, 1);
     },
     postUpvote(state, action){
       return state.map((post) => {
