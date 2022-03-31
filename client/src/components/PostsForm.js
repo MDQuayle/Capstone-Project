@@ -35,7 +35,7 @@ function PostsForm({user, sport}) {
               setContent("")
             });
           } else {
-          setErrors("Invalid Entry. Please include a title and at least 10 characters for your post");
+            response.json().then((errorData) => setErrors(errorData.errors))
           }
         });
       }
@@ -64,10 +64,14 @@ function PostsForm({user, sport}) {
               autoComplete="off"
             />
             </p>
+            {errors.length > 0 && (
+          <ul style={{ color: "red" }}>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )}
             <input type="submit" value="Post!" />
-              <p style={{ color: "red" }}>
-                {errors}
-              </p>
           </form>
           </>
       )
