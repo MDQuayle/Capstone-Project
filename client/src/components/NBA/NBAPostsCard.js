@@ -6,7 +6,7 @@ function NBAPostsCard({post, id, user}) {
   const dispatch = useDispatch();
   
   function handleDeleteClick(){
-    fetch(`/post/${post.id}`, {
+    fetch(`/posts/${post.id}`, {
       method: "DELETE",
     });
 
@@ -14,7 +14,7 @@ function NBAPostsCard({post, id, user}) {
   }
 
   function handleUpvoteClick(){
-    fetch(`post/${post.id}`, {
+    fetch(`posts/${post.id}`, {
       method: "PATCH",
       headers: {
           "Content-Type": "application/json",
@@ -25,7 +25,7 @@ function NBAPostsCard({post, id, user}) {
   }
 
   function handleDownvoteClick(){
-    fetch(`post/${post.id}`, {
+    fetch(`posts/${post.id}`, {
       method: "PATCH",
       headers: {
           "Content-Type": "application/json",

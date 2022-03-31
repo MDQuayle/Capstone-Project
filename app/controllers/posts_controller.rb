@@ -4,47 +4,6 @@ class PostsController < ApplicationController
     posts = Post.all
     render json: posts
   end
-  # def sport(sport)  
-  #   posts = Post.where(sport: sport)
-  #   render json: posts
-  # end
-	
-  # def nba
-	# 	sport("NBA")
-	# end
-
-  # def nfl
-	# 	sport("NFL")
-	# end
-
-  # def mlb
-	# 	sport("MLB")
-	# end
-
-  # def wnba
-	# 	sport("WNBA")
-	# end
-
-  # def mls
-	# 	sport("MLS")
-	# end
-
-  # def ncaaf
-	# 	sport("NCAAF")
-	# end
-
-  # def ncaam
-	# 	sport("NCAAM")
-	# end
-
-  # def ncaaw
-	# 	sport("NCAAW")
-	# end
-
-  # def nhl
-	# 	sport("NHL")
-	# end
-
 	
   def create
     post = Post.create!(post_params)
