@@ -8,7 +8,7 @@ function NFLPostsCard({post, id, user}) {
   const [votes, setVotes] = useState(post.votes);
   
   function handleDeleteClick(){
-    fetch(`/post/${post.id}`, {
+    fetch(`/posts/${post.id}`, {
       method: "DELETE",
     });
 
@@ -16,7 +16,7 @@ function NFLPostsCard({post, id, user}) {
   }
 
   function handleUpvoteClick(){
-    fetch(`post/${post.id}`, {
+    fetch(`posts/${post.id}`, {
       method: "PATCH",
       headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function NFLPostsCard({post, id, user}) {
   }
 
   function handleDownvoteClick(){
-    fetch(`post/${post.id}`, {
+    fetch(`posts/${post.id}`, {
       method: "PATCH",
       headers: {
           "Content-Type": "application/json",
