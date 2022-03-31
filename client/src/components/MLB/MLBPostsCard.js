@@ -1,9 +1,11 @@
 import RepliesList from '../RepliesList'
 import { Card, CardTitle, CardText, Button} from 'reactstrap'
 import { useDispatch } from "react-redux";
+import {useState} from 'react';
 import {postRemoved, postUpvote, postDownvote } from '../PostSlice'
 function MLBPostsCard({post, id, user}) {
   const dispatch = useDispatch();
+  const [votes, setVotes] = useState(post.votes);
   
   function handleDeleteClick(){
     fetch(`/post/${post.id}`, {
@@ -22,6 +24,7 @@ function MLBPostsCard({post, id, user}) {
        body: JSON.stringify({votes: post.votes +1 }),
       })
     dispatch(postUpvote(post.id))
+    setVotes(votes+1)
   }
 
   function handleDownvoteClick(){
@@ -33,6 +36,7 @@ function MLBPostsCard({post, id, user}) {
        body: JSON.stringify({votes: post.votes -1 }),
       })
     dispatch(postDownvote(post.id))
+    setVotes(votes-1)
   }
   return(
     <div>
