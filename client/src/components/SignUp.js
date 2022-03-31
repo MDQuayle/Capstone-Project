@@ -24,7 +24,7 @@ function SignUp({ handleLogin }) {
         if (r.ok) {
           r.json().then((user) => handleLogin(user));
       }});
-      navigate('/home')
+      navigate('/')
     }
   
     return (

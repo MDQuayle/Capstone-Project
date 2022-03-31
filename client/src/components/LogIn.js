@@ -20,7 +20,7 @@ function LogIn({handleLogin}){
               r.json().then((user) => handleLogin(user));
             }
           });
-          navigate('/home')
+          navigate('/')
         }
       
         return (
