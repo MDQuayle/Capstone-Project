@@ -51,7 +51,7 @@ function RepliesForm({id,user}) {
               id="title"
               autoComplete="off"
               value={formData.title}
-              onChange={handleChange}
+              onChange={(e) => setFormData('title', e.target.value)}
             />
 
             <p>
@@ -60,7 +60,7 @@ function RepliesForm({id,user}) {
               type="text"
               id="content"
               value={formData.content}
-              onChange={handleChange}
+              onChange={(e) => setFormData('content', e.target.value)}
               autoComplete="off"
             />
             </p>
