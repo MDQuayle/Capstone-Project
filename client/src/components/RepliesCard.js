@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {replyRemoved, replyUpvote, replyDownvote } from './ReplySlice'
 function NBARepliesCard({user, reply, id}) {
   const dispatch = useDispatch();
-  const [votes, setVotes] = useState(post.votes);
+  const [votes, setVotes] = useState(reply.votes);
 
   function handleDeleteClick(){
     fetch(`/replies/${reply.id}`, {
