@@ -1,8 +1,11 @@
 import { Card, CardTitle, CardText, Button} from 'reactstrap'
 import { useDispatch } from "react-redux";
+import {useState} from 'react';
 import {replyRemoved, replyUpvote, replyDownvote } from './ReplySlice'
 function NBARepliesCard({user, reply, id}) {
   const dispatch = useDispatch();
+  const [votes, setVotes] = useState(post.votes);
+
   function handleDeleteClick(){
     fetch(`/replies/${reply.id}`, {
       method: "DELETE",
@@ -20,6 +23,7 @@ function NBARepliesCard({user, reply, id}) {
        body: JSON.stringify({votes: reply.votes +1 }),
       })
     dispatch(replyUpvote(reply.id))
+    setVotes(votes+1)
   }
 
   function handleDownvoteClick(){
@@ -31,6 +35,7 @@ function NBARepliesCard({user, reply, id}) {
        body: JSON.stringify({votes: reply.votes -1 }),
       })
     dispatch(replyDownvote(reply.id))
+    setVotes(votes-1)
   }
   return(
     <div>
@@ -49,7 +54,7 @@ function NBARepliesCard({user, reply, id}) {
         <CardText>
           <p>{reply.content}</p>
           <p>{reply.username}</p>
-          <p>Score: {reply.votes}</p>
+          <p>Score: {votes}</p>
         </CardText>
         <Button onClick={handleUpvoteClick}>
           UpVote

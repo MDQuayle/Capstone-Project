@@ -55,7 +55,7 @@ function MLBPostsCard({post, id, user}) {
         <CardText>
           <p>{post.content}</p>
           <p> - {post.username}</p>
-          <p>Score: {post.votes}</p>
+          <p>Score: {votes}</p>
         </CardText>
         <Button onClick={handleUpvoteClick}>
           UpVote
