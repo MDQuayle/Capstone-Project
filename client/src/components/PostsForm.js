@@ -6,13 +6,12 @@ import { postAdded } from './PostSlice';
 function PostsForm({user, sport}) {
     const [title,setTitle] = useState("")
     const [content,setContent] = useState("")
-
     const[errors, setErrors] = useState("")
     const dispatch = useDispatch();
     const formData = {
       title: title,
       content: content,
-      sport: {sport},
+      sport: sport,
       user_id: user.id,
       username: user.username,
       votes: 0,
