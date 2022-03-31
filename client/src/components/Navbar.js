@@ -23,6 +23,14 @@ const activeLinkStyles = {
 function Navbar() {
   return (
     <div>
+      <NavLink
+        to="/"
+        exact
+        style={({ isActive }) => 
+                      (isActive ? activeLinkStyles : linkStyles)}
+      >
+        HOME
+      </NavLink>
      <NavLink
         to="/NBA"
         exact

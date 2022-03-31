@@ -1,4 +1,4 @@
-function Home(user) {
+function Home({user}) {
 
     return (
         <div>
