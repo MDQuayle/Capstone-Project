@@ -3,22 +3,18 @@ import { useDispatch } from "react-redux";
 import { replyAdded } from './ReplySlice';
 
 function RepliesForm({id,user}) {
-  const [formData, setFormData] = useState({
-    title: "",
-    content: "",
-    // username: user.username,
-    post_id: id
-  });
-    const[errors, setErrors] = useState("")
-    const dispatch = useDispatch();
+  const [title,setTitle] = useState("")
+  const [content,setContent] = useState("")
 
-    function handleChange(event) {
-      setFormData({
-        ...formData,
-        [event.target.name]: event.target.value,
-      });
-    }
-
+  const[errors, setErrors] = useState("")
+  const dispatch = useDispatch();
+  const formData = {
+    title: title,
+    content: content,
+    user_id: user.id,
+    username: user.username,
+    votes: 0,
+  }
     function handleSubmit(e) {
         e.preventDefault();
         fetch(`/replies`, {
@@ -32,6 +28,8 @@ function RepliesForm({id,user}) {
           if (response.ok) {
             response.json().then((reply) => {
               setErrors([]);
+              setTitle("")
+              setContent("")
               dispatch(replyAdded(reply));
             });
           } else {
@@ -51,7 +49,7 @@ function RepliesForm({id,user}) {
               id="title"
               autoComplete="off"
               value={formData.title}
-              onChange={(e) => setFormData('title', e.target.value)}
+              onChange={(e) => setTitle(e.target.value)}
             />
 
             <p>
@@ -60,7 +58,7 @@ function RepliesForm({id,user}) {
               type="text"
               id="content"
               value={formData.content}
-              onChange={(e) => setFormData('content', e.target.value)}
+              onChange={(e) => setContent(e.target.value)}
               autoComplete="off"
             />
             </p>

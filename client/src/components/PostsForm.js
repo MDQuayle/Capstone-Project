@@ -4,16 +4,19 @@ import { postAdded } from './PostSlice';
 
 
 function PostsForm({user, sport}) {
-  const [formData, setFormData] = useState({
-    title: "",
-    content: "",
-    sport: {sport},
-    user_id: user.id,
-    username: user.username,
-    votes: 0,
-  });
+    const [title,setTitle] = useState("")
+    const [content,setContent] = useState("")
+
     const[errors, setErrors] = useState("")
     const dispatch = useDispatch();
+    const formData = {
+      title: title,
+      content: content,
+      sport: {sport},
+      user_id: user.id,
+      username: user.username,
+      votes: 0,
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -29,8 +32,8 @@ function PostsForm({user, sport}) {
             response.json().then((post) => {
               setErrors([]);
               dispatch(postAdded(post));
-              setFormData({title: "",
-              content: ""})
+              setTitle("")
+              setContent("")
             });
           } else {
           setErrors("Invalid Entry. Please include a title and at least 10 characters for your post");
@@ -49,7 +52,7 @@ function PostsForm({user, sport}) {
               id="title"
               autoComplete="off"
               value={formData.title}
-              onChange={(e) => setFormData('title', e.target.value)}
+              onChange={(e) => setTitle(e.target.value)}
             />
 
             <p>
@@ -58,7 +61,7 @@ function PostsForm({user, sport}) {
               type="text"
               id="content"
               value={formData.content}
-              onChange={(e) => setFormData('content', e.target.value)}
+              onChange={(e) => setContent(e.target.value)}
               autoComplete="off"
             />
             </p>
