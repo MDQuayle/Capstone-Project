@@ -38,7 +38,7 @@ function App() {
 
   function handleLogout() {
     setUser(null)
-    navigate('/home')
+    navigate('/')
   }
 
 

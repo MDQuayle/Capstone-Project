@@ -2,10 +2,7 @@ function Home(user) {
 
     return (
         <div>
-            <h2>Thank you for choosing Sporum! Please log in to post!</h2>
-            <h1>
-        Welcome To Sporum!
-      </h1>
+            <h2>Thank you for choosing Sporum!</h2>
       {user ? (
         <div>
           <p>Welcome {user.username}!</p>

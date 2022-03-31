@@ -4,7 +4,7 @@ function Header({onLogout}) {
 
   return (
     <header>
-      <h2>Welcome to Sporum!</h2>
+      <h1>Sporum!</h1>
     <Button onClick={onLogout}>
       Log Out
     </Button>
