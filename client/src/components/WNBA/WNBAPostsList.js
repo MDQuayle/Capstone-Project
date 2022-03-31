@@ -4,7 +4,6 @@ import PostsForm from '../PostsForm';
 function WNBAPostsList({user}) {
   const sport = "WNBA"
   const posts =  useSelector((state) => state.posts)
-  console.log(posts)
   const WNBA = posts.filter(function(post) {
     if(post.sport === 'WNBA')
       return post;
