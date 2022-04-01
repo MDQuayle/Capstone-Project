@@ -11,7 +11,8 @@ function RepliesForm({id,user}) {
   const formData = {
     title: title,
     content: content,
-    user_id: id,
+    post_id: id,
+    user_id: user.id,
     username: user.username,
     votes: 0,
   }

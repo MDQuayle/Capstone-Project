@@ -11,7 +11,7 @@ class RepliesController < ApplicationController
   end 
 
   def create
-    review = Reply.create!(reply_params)
+    reply = Reply.create!(reply_params)
     render json: reply , status: :created
   end
 
