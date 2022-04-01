@@ -1,24 +1,15 @@
 # README
+ruby version: 2.7.4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+react version : ^17.0.2
+# running app:
+rails db:migrate db:seed
 
-Things you may want to cover:
+rails s
 
-* Ruby version
+npm start --prefix client
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Allows users to converse about their favorite sports
+- Users log in to have their voices heard
+- can create, read, upvote and delete posts
+- seperates sports for more specific conversations
