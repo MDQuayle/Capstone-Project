@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import { Button } from "reactstrap"
-function Header({onLogout}) {
+function Header({onLogout, user}) {
 
   return (
     <header>
@@ -8,7 +8,7 @@ function Header({onLogout}) {
     <Button onClick={onLogout}>
       Log Out
     </Button>
-    <Navbar/>
+    <Navbar user={user}/>
     
     </header>
   );

@@ -20,9 +20,11 @@ const activeLinkStyles = {
   color: "black",
 };
 
-function Navbar() {
+function Navbar({user}) {
   return (
     <div>
+      {user ? (
+        <div>
       <NavLink
         to="/"
         exact
@@ -62,7 +64,8 @@ function Navbar() {
         (isActive ? activeLinkStyles : linkStyles)}
       >
         MLB
-      </NavLink>
+      </NavLink> 
+      </div>) : (
       <NavLink
         to="/login"
         exact
@@ -71,6 +74,7 @@ function Navbar() {
       >
         LogIn
       </NavLink>
+      )}
     </div>
   );
 }
