@@ -1,9 +1,12 @@
 # README
 ruby version: 2.7.4
+
 react version : ^17.0.2
 # running app:
 rails db:migrate db:seed
+
 rails s
+
 npm start --prefix client
 
 - Allows users to converse about their favorite sports
